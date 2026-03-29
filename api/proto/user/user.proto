@@ -13,8 +13,8 @@ message User {
 }
 
 enum UserStatus {
-    USER_STATUS_ACTIVE = 0;
-    USER_STATUS_INACTIVE = 1;
+    USER_STATUS_INACTIVE = 0;
+    USER_STATUS_ACTIVE = 1;
 }
 
 message CreateUserRequest {
