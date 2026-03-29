@@ -22,7 +22,7 @@ func main() {
 		log.Fatalf("Error loading config")
 	}
 
-	logger, err := logger.NewLogger(cfg)
+	logger, err := logger.NewLogger("UserService")
 
 	if err != nil {
 		log.Fatalf("Error initializing logger: %v", err)
@@ -38,7 +38,7 @@ func main() {
 		logger.Error("Error initializing postgres db: %v", err)
 	}
 
-	repo := postgres.NewUserRepo(postgresDB)
+	repo := postgres.NewUserRepo(postgresDB, logger)
 	service := service.NewUserService(repo, logger)
 
 	logger.Info("Complete initializing user repository")

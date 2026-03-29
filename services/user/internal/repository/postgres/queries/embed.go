@@ -21,9 +21,8 @@ type UserQueries struct {
 	CheckEmailExist string
 
 	UpdateUserStatus string
-	GetUserStatus    string
 
-	SearchUser string
+	SearchUsers string
 }
 
 type InitQueries struct {
@@ -93,8 +92,7 @@ func GetUserQueries() *UserQueries {
 		DeleteUser:       userQueriesMap["DeleteUser"],
 		CheckEmailExist:  userQueriesMap["CheckEmailExist"],
 		UpdateUserStatus: userQueriesMap["UpdateUserStatus"],
-		GetUserStatus:    userQueriesMap["GetUserStatus"],
-		SearchUser:       userQueriesMap["SearchUser"],
+		SearchUsers:      userQueriesMap["SearchUsers"],
 	}
 
 	return userQueries

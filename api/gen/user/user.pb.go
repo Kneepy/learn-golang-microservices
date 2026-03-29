@@ -24,25 +24,19 @@ const (
 type UserStatus int32
 
 const (
-	UserStatus_USER_STATUS_UNSPECIFIED UserStatus = 0
-	UserStatus_USER_STATUS_ACTIVE      UserStatus = 1
-	UserStatus_USER_STATUS_INACTIVE    UserStatus = 2
-	UserStatus_USER_STATUS_SUSPENDED   UserStatus = 3
+	UserStatus_USER_STATUS_ACTIVE   UserStatus = 0
+	UserStatus_USER_STATUS_INACTIVE UserStatus = 1
 )
 
 // Enum value maps for UserStatus.
 var (
 	UserStatus_name = map[int32]string{
-		0: "USER_STATUS_UNSPECIFIED",
-		1: "USER_STATUS_ACTIVE",
-		2: "USER_STATUS_INACTIVE",
-		3: "USER_STATUS_SUSPENDED",
+		0: "USER_STATUS_ACTIVE",
+		1: "USER_STATUS_INACTIVE",
 	}
 	UserStatus_value = map[string]int32{
-		"USER_STATUS_UNSPECIFIED": 0,
-		"USER_STATUS_ACTIVE":      1,
-		"USER_STATUS_INACTIVE":    2,
-		"USER_STATUS_SUSPENDED":   3,
+		"USER_STATUS_ACTIVE":   0,
+		"USER_STATUS_INACTIVE": 1,
 	}
 )
 
@@ -146,7 +140,7 @@ func (x *User) GetStatus() UserStatus {
 	if x != nil {
 		return x.Status
 	}
-	return UserStatus_USER_STATUS_UNSPECIFIED
+	return UserStatus_USER_STATUS_ACTIVE
 }
 
 type CreateUserRequest struct {
@@ -270,13 +264,11 @@ const file_user_user_proto_rawDesc = "" +
 	"\x04name\x18\x02 \x01(\tR\x04name\x12\x1a\n" +
 	"\bpassword\x18\x03 \x01(\tR\bpassword\"<\n" +
 	"\x12CreateUserResponse\x12&\n" +
-	"\x04user\x18\x01 \x01(\v2\x12.user_service.UserR\x04user*v\n" +
+	"\x04user\x18\x01 \x01(\v2\x12.user_service.UserR\x04user*>\n" +
 	"\n" +
-	"UserStatus\x12\x1b\n" +
-	"\x17USER_STATUS_UNSPECIFIED\x10\x00\x12\x16\n" +
-	"\x12USER_STATUS_ACTIVE\x10\x01\x12\x18\n" +
-	"\x14USER_STATUS_INACTIVE\x10\x02\x12\x19\n" +
-	"\x15USER_STATUS_SUSPENDED\x10\x032^\n" +
+	"UserStatus\x12\x16\n" +
+	"\x12USER_STATUS_ACTIVE\x10\x00\x12\x18\n" +
+	"\x14USER_STATUS_INACTIVE\x10\x012^\n" +
 	"\vUserService\x12O\n" +
 	"\n" +
 	"CreateUser\x12\x1f.user_service.CreateUserRequest\x1a .user_service.CreateUserResponseB\x19Z\x17learning-golang/api/genb\x06proto3"

@@ -4,5 +4,6 @@
     <file url="file://$PROJECT_DIR$/.idea/queries/Query.sql" dialect="PostgreSQL" />
     <file url="file://$PROJECT_DIR$/.idea/queries/Query_1.sql" dialect="PostgreSQL" />
     <file url="file://$PROJECT_DIR$/services/user/internal/repository/postgres/queries/init.sql" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/services/user/internal/repository/postgres/queries/user.sql" dialect="GenericSQL" />
   </component>
 </project>

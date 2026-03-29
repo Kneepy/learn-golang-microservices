@@ -18,14 +18,12 @@ type PostgresConfig struct {
 
 type PostgresDB struct {
 	*sql.DB
-	config      *PostgresConfig
-	logger      *logger.Logger
-	userQueries *queries.UserQueries
+	config *PostgresConfig
+	logger *logger.Logger
 }
 
 func NewPostgresDB(cfg *PostgresConfig, log *logger.Logger) (*PostgresDB, error) {
 	connectionString := DBConnectionString(cfg)
-	userQueries := queries.GetUserQueries()
 	initQueries := queries.GetInitQueries()
 
 	log.Info("Connecting to PostgreSQL")
@@ -45,10 +43,9 @@ func NewPostgresDB(cfg *PostgresConfig, log *logger.Logger) (*PostgresDB, error)
 	}
 
 	return &PostgresDB{
-		DB:          db,
-		logger:      log,
-		config:      cfg,
-		userQueries: userQueries,
+		DB:     db,
+		logger: log,
+		config: cfg,
 	}, nil
 }
 

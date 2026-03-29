@@ -5,8 +5,6 @@ import (
 	"log"
 	"os"
 	"sync"
-
-	"learning_golang/user/internal/config"
 )
 
 type LogLevel int
@@ -49,10 +47,10 @@ type Logger struct {
 	serviceName string
 }
 
-func NewLogger(config *config.Config) (*Logger, error) {
+func NewLogger(loggerName string) (*Logger, error) {
 	return &Logger{
 		logger:      log.New(os.Stdout, "", 0),
-		serviceName: config.ServiceName,
+		serviceName: loggerName,
 	}, nil
 }
 

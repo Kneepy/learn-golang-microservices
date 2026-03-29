@@ -8,5 +8,6 @@ CREATE TABLE IF NOT EXISTS users (
     name VARCHAR(255) NOT NULL,
     email VARCHAR(255) NOT NULL,
     password TEXT NOT NULL,
-    created_at INT NOT NULL
+    created_at INT NOT NULL,
+    status INT NOT NULL DEFAULT 0
 );

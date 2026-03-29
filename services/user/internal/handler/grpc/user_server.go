@@ -43,7 +43,7 @@ func (s *UserServer) CreateUser(ctx context.Context, req *gen.CreateUserRequest)
 			Name:      user.Name,
 			Email:     user.Email,
 			CreatedAt: user.CreatedAt,
-			Status:    1, // это надо на статус поменять как сделаю чета
+			Status:    gen.UserStatus(user.Status),
 		},
 	}, nil
 }
